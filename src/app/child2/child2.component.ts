@@ -10,7 +10,9 @@ export class Child2Component implements OnInit {
 
   public numberItem : number  =0 ;
   constructor(private sharedService : SharedService) {
-    this.sharedService.mySubject.subscribe(data => this.numberItem =data);
+    this.sharedService.mySubject.subscribe(data => {
+      this.numberItem = data;
+    });
    }
 
   ngOnInit(): void {

@@ -7,4 +7,19 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'api-app';
+  childProp ="Passed parent data to child...";
 }
+
+
+
+
+/*
+ng new myapp
+ng g c hello -> 
+
+ng - angular/cli
+g - generate
+c - component 
+hello - copmponent name 
+
+*/
