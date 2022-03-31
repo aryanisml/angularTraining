@@ -29,7 +29,6 @@ export class HelloComponent implements OnInit, OnChanges{
   ngAfterContnetInit
   NgAfterContentChekced
   ngDestory
-  
   */
 
 
