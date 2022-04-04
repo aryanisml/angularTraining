@@ -1,13 +1,68 @@
-import { Component } from '@angular/core';
+import { AfterViewChecked, AfterViewInit, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit, AfterViewChecked, OnDestroy{
+ 
+  public tempProp = true;
+
+/* 
+
+   if(tempProp) {
+       show Content
+   }else {
+     hide content 
+   }
+
+*/
+
+
+   private _child:any;
+  @ViewChild('newChildtemp') 
+  set sampleHelloChild (value : ElementRef<any>){
+    this._child = value;
+  }
+
+  @ViewChild('child1')
+  child1!: ElementRef;
+
+  constructor(private element: ElementRef){
+
+  }
+  /*
+  cfcacpg
+  1qaz2wsx
+*/
+
   title = 'api-app';
   childProp ="Passed parent data to child...";
+
+   ngAfterViewInit(): void {
+     console.log(this.child1.nativeElement);
+      console.log('View Child init...');
+   }
+
+   ngAfterViewChecked(): void {
+    console.log('View checked....');
+  }
+   
+
+  ngOnDestroy(): void {
+  console.log('clean up destroy');
+  }
+  
+
+  onShow(){
+    this.tempProp= true;
+  }
+
+  onHide(){
+     this.tempProp = false;
+  }
+
 }
 
 

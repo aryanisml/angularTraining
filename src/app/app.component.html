@@ -311,6 +311,30 @@
 
 
 
-<app-child1></app-child1>
+<app-child1    #child1></app-child1>
 <app-child2></app-child2>
-<app-hello  [childProp] ="childProp" ></app-hello>
+<app-hello  [newChildProp] ="childProp"  #newChildtemp>
+  
+  <div>
+    Hello World content init
+  </div>
+  <button>Click Me</button>
+
+</app-hello>
+  
+ <nav>
+
+   <a  routerLink="/home">Home</a>
+    <a routerLink="/about">About</a>
+ </nav>
+ <router-outlet></router-outlet>
+
+
+
+ <div style="display: flex;">
+  <button   (click)="onShow()"> Show</button>
+  <button  (click)="onHide()">Hide</button>
+  <span *ngIf="tempProp">
+    The data going to be show.
+  </span>
+ </div>

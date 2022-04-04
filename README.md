@@ -35,3 +35,7 @@ ng -> angular cli
 g -> generate
 c -> component
 hello > component name 
+
+
+
+ng g m app-routing --flat --module=1pp
