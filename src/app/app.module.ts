@@ -8,6 +8,8 @@ import { Child2Component } from './child2/child2.component';
 import { HelloComponent } from './hello/hello.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
+import { ProductComponent } from './about/product/product.component';
+import { SubscriptionComponent } from './about/subscription/subscription.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { AboutComponent } from './about/about.component';
     Child2Component,
     HelloComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    ProductComponent,
+    SubscriptionComponent
   ],
   imports: [
     BrowserModule,
