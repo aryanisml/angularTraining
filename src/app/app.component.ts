@@ -8,6 +8,8 @@ import { AfterViewChecked, AfterViewInit, Component, ElementRef, OnDestroy, View
 export class AppComponent implements AfterViewInit, AfterViewChecked, OnDestroy{
  
   public tempProp = true;
+  public tempProp2 = false;
+  public tempPerform = 'Hide';
 
 /* 
 
@@ -61,6 +63,16 @@ export class AppComponent implements AfterViewInit, AfterViewChecked, OnDestroy{
 
   onHide(){
      this.tempProp = false;
+  }
+
+  perform(){
+    if(this.tempProp2 === false) {
+      this.tempPerform = 'Show';
+      this.tempProp2 = true;
+    }else {
+      this.tempPerform = 'Hide';
+      this.tempProp2 = false;
+    }
   }
 
 }
