@@ -43,7 +43,7 @@ export class AppComponent implements AfterViewInit, AfterViewChecked, OnDestroy{
   childProp ="Passed parent data to child...";
 
    ngAfterViewInit(): void {
-     console.log(this.child1.nativeElement);
+     //console.log(this.child1.nativeElement);
       console.log('View Child init...');
    }
 

@@ -1,1 +1,13 @@
-<p>product works!</p>
+<ng-container>
+    <div class="row">
+        <div class="card" *ngFor="let item of  productData">
+            <div class="card-header">
+                <h1>{{item.title}}</h1>
+              </div>
+              <div class="card-body">
+                <img src="{{item.image}}" alt="Avatar" width="100%">
+                <button class="btn" (click)="goToProudct(item.id)">Details</button>
+              </div>
+        </div>
+    </div>
+</ng-container>

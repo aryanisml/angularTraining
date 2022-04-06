@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {HttpClientModule} from  '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ProductComponent } from './about/product/product.component';
 import { SubscriptionComponent } from './about/subscription/subscription.component';
+import { ProductDetailsComponent } from './about/product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +22,13 @@ import { SubscriptionComponent } from './about/subscription/subscription.compone
     HomeComponent,
     AboutComponent,
     ProductComponent,
-    SubscriptionComponent
+    SubscriptionComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
