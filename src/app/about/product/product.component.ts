@@ -1,5 +1,7 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 import { ProductService } from './product.service';
 
 @Component({
@@ -8,20 +10,29 @@ import { ProductService } from './product.service';
   styleUrls: ['./product.component.scss'],
   encapsulation: ViewEncapsulation.Emulated
 })
-export class ProductComponent implements OnInit {
+export class ProductComponent implements OnInit, OnDestroy {
 
   productData : Array<any> =[];
+  private destroy$ : Subject<boolean> = new Subject<boolean>();
   constructor(private productService : ProductService,
     private router: Router) { 
    this.getProductData();
   }
-
-  ngOnInit(): void {
+  ngOnDestroy(): void {
+    this.destroy$.next(true);
+    this.destroy$.unsubscribe();
   }
 
+  ngOnInit(): void {
+   
+  }
+
+  
 
   private getProductData() {
-    this.productService.getProductData().subscribe((res)=>{
+    this.productService.getProductData()
+    .pipe(takeUntil(this.destroy$))
+    .subscribe((res)=>{
       this.productData = res;
       console.log(this.productData);
     })
