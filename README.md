@@ -39,3 +39,5 @@ hello > component name
 
 
 ng g m app-routing --flat --module=1pp
+
+ng g module Login --route Login --module app

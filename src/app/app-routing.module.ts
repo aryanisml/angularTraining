@@ -10,7 +10,7 @@ import { ProductDetailsComponent } from './about/product-details/product-details
 const routes : Routes = [
      {path: 'profile', loadChildren:()=> import('./profile/profile.module').then(mod=> mod.ProfileModule)},  /// lazy loading 
 
-     {path: '', redirectTo:'/home', pathMatch: 'full'},
+     {path: '', redirectTo:'/login', pathMatch: 'full'},
      {path: 'home' , component: HomeComponent},
      {path: 'about', component : AboutComponent,
       children: [
@@ -24,7 +24,8 @@ const routes : Routes = [
           path:'product/:id', component: ProductDetailsComponent
         }
       ]
-  }
+  },
+     { path: 'login', loadChildren: () => import('./login/login.module').then(m => m.LoginModule) }
 ];
 
 /// Eagrly loading ;
