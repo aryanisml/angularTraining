@@ -25,7 +25,8 @@ const routes : Routes = [
         }
       ]
   },
-     { path: 'login', loadChildren: () => import('./login/login.module').then(m => m.LoginModule) }
+     { path: 'login', loadChildren: () => import('./login/login.module').then(m => m.LoginModule) },
+     { path: 'card', loadChildren: () => import('./card/card.module').then(m => m.CardModule) }
 ];
 
 /// Eagrly loading ;

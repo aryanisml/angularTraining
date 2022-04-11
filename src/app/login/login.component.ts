@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { LoginService } from './login.service';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,8 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 export class LoginComponent implements OnInit {
    myForm: FormGroup;
 
-  constructor( private formBuilder: FormBuilder) { }
+  constructor( private formBuilder: FormBuilder, 
+    private loginService : LoginService) { }
 
   ngOnInit(): void {
     this.myForm = this.formBuilder.group({
@@ -20,11 +22,9 @@ export class LoginComponent implements OnInit {
       // name: 'Swapnil',
       // email: '',
       // message: ''
-
-
       name: ['Swapnil', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      message: ['', [Validators.required, Validators.minLength(15)]],
+      email: ['swapnil.kamble02@gmail.com', [Validators.required, Validators.email]],
+      message: ['', [Validators.required, Validators.minLength(15)]]
     });
   }
 
@@ -33,6 +33,21 @@ export class LoginComponent implements OnInit {
     console.log('Name', form.value.name);
     console.log('Email', form.value.email);
     console.log('Message', form.value.message);
+
+    this.loginService.login(form).subscribe(d=>{
+      alert(d);
+    })
   }
 
 }
+
+
+//// http://google.com/login
+
+
+///// service -> LoginService
+/*
+
+
+
+*/

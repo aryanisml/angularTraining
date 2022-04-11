@@ -41,3 +41,15 @@ hello > component name
 ng g m app-routing --flat --module=1pp
 
 ng g module Login --route Login --module app
+
+
+ng g module card --route  card --module app
+
+ng g module flipkart --route  flipkart --module card
+
+
+Reactive Forms
+
+Module - import ReactiveFormsModule 
+In html - add formGroup property;
+add formControlName property;

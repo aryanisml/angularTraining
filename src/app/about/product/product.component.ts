@@ -19,6 +19,7 @@ export class ProductComponent implements OnInit, OnDestroy {
    this.getProductData();
   }
   ngOnDestroy(): void {
+    console.log('destroy......');
     this.destroy$.next(true);
     this.destroy$.unsubscribe();
   }
@@ -31,7 +32,7 @@ export class ProductComponent implements OnInit, OnDestroy {
 
   private getProductData() {
     this.productService.getProductData()
-    .pipe(takeUntil(this.destroy$))
+     .pipe(takeUntil(this.destroy$))
     .subscribe((res)=>{
       this.productData = res;
       console.log(this.productData);

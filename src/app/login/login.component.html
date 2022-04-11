@@ -1,7 +1,11 @@
 <div class="card">
     <h4 class="card-header">Login</h4>
     <div class="card-body">
-        <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+
+  
+
+
+        <form [formGroup]="myForm" >
             <div class="form-group">
               <label>
                 Name:
@@ -29,7 +33,7 @@
                 Messages must be at least 15 characters long.
               </div>
             </div>
-            <button type="submit" [disabled]="myForm.invalid" class="btn btn-primary">Login</button>
+            <button type="submit" [disabled]="myForm.invalid" class="btn btn-primary"  (click)="onSubmit(myForm)">Login</button>
           </form>
     </div>
     </div>
